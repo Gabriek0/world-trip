@@ -3,6 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import { WorldTripIcon } from "../../icons";
 
 function Header() {
+
     return (
         <Flex
             as="header"

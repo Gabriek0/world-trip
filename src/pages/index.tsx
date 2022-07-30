@@ -8,18 +8,20 @@ import { Flex } from '@chakra-ui/react'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import Attractions from '../components/Attractions'
+import Swiper from '../components/Swiper'
 
 const Home: NextPage = () => {
   return (
     <Flex
       h="100vh"
-      w="100vw"
+      w="100%"
       bg="gray.100"
       flexDirection="column"
     >
       <Header />
       <Banner />
       <Attractions />
+      <Swiper />
     </Flex>
   )
 }
