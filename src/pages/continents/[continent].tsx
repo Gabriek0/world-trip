@@ -1,10 +1,10 @@
 import { Box, Flex, HStack, Text, Tooltip } from "@chakra-ui/react";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
-import Header from "../../../components/Header";
+import Header from "../../components/Header";
 
-import Countries from "../../../components/Countries";
+import Countries from "../../components/Countries";
 
-function EuropePage() {
+function ContinentPage() {
   return (
     <Flex flexDirection="column">
       <Header />
@@ -66,7 +66,7 @@ function EuropePage() {
               <Text
                 fontWeight="600"
                 color="gray.400"
-                fontSize={["16", "20", "24"]}
+                fontSize={["14", "20", "24"]}
               >
                 países
               </Text>
@@ -83,7 +83,7 @@ function EuropePage() {
               <Text
                 fontWeight="600"
                 color="gray.400"
-                fontSize={["16", "20", "24"]}
+                fontSize={["14", "20", "24"]}
               >
                 línguas
               </Text>
@@ -102,7 +102,7 @@ function EuropePage() {
                 alignItems="center"
                 fontWeight="600"
                 color="gray.400"
-                fontSize={["16", "20", "24"]}
+                fontSize={["14", "20", "24"]}
               >
                 cidades + 100
                 <Tooltip
@@ -123,4 +123,4 @@ function EuropePage() {
   );
 }
 
-export default EuropePage;
+export default ContinentPage;

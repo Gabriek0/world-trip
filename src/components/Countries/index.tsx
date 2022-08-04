@@ -25,7 +25,10 @@ function Countries() {
           gap="4"
           flexDir={["column", "column", "row"]}
           align="center"
+          flexWrap="wrap"
         >
+          <CountryCard />
+          <CountryCard />
           <CountryCard />
           <CountryCard />
           <CountryCard />

@@ -1,0 +1,83 @@
+{
+    "continents": [
+        {
+            "id": "061b99d4-138c-11ed-861d-0242ac120002",
+            "name": "Europa",
+            "description": "O continente mais antigo.",
+            "image": "https://tinyurl.com/mr4xunbc",
+            "shortcut": "europe",
+            "countries": [
+                {   
+                    "id": "6e8ac476-1388-11ed-861d-0242ac12000",
+                    "country": "Reino Unido",
+                    "capital": "Londres",
+                    "flag": "https://tinyurl.com/ynvramy6",
+                    "capitalImage": "https://tinyurl.com/35krz6xu"
+                },
+                {    
+                    "id": "f1f112a4-138b-11ed-861d-0242ac120002",
+                    "country": "França",
+                    "capital": "Paris",
+                    "flag": "https://tinyurl.com/mry5f2u8",
+                    "capitalImage": "https://tinyurl.com/ye23pau2"
+                },
+                {   
+                    "id": "f6b925a6-138b-11ed-861d-0242ac12000",
+                    "country": "Itália",
+                    "capital": "Roma", 
+                    "flag": "https://tinyurl.com/mr26tet9",
+                    "capitalImage": "https://tinyurl.com/3kdkks5p"
+                }, 
+                {   
+                    "id": "fcc6d61e-138b-11ed-861d-0242ac120002",
+                    "country": "República Tcheca",
+                    "capital": "Praga",
+                    "flag": "https://tinyurl.com/2twbewc9",
+                    "capitalImage": "https://tinyurl.com/3az5ep46"
+                },
+                {   
+                    "id": "ff975350-138b-11ed-861d-0242ac120002",
+                    "country": "Holanda",
+                    "capital": "Amsterdã",
+                    "flag": "https://tinyurl.com/mr24w3rv",
+                    "capitalImage": "https://tinyurl.com/2ac8vx96"
+                }
+            ]
+        },
+        {
+            "id": "0a2cd952-138c-11ed-861d-0242ac120002",
+            "name": "Oceania",
+            "description": "O continente situado entre oceanos.",
+            "image": "https://tinyurl.com/3c2x5ur6",
+            "shortcut": "oceania"
+        },
+        {
+            "id": "0a2cd952-138c-11ed-861d-0242ac120002",
+            "name": "Ásia",
+            "description": "O continente mais extenso.",
+            "image": "https://tinyurl.com/2p8vmuzb",
+            "shortcut": "asia"
+        },
+        {
+            "id": "13211bea-138c-11ed-861d-0242ac120002",
+            "name": "África",
+            "description": "O continente rico em biodiversidade.",
+            "image": "https://tinyurl.com/ynszwzv6",
+            "shortcut": "africa"
+        },
+        {
+            "id": "17078410-138c-11ed-861d-0242ac120002",
+            "name": "América do Sul",
+            "description": "O continente com climas diversificados.",
+            "image": "https://tinyurl.com/b3zwkzfh",
+            "shortcut": "south_america"
+        },
+        {
+            "id": "1a819a9a-138c-11ed-861d-0242ac120002",
+            "name": "América do Norte",
+            "description": "Um dos continentes mais desenvolvidos.",
+            "image": "https://tinyurl.com/4phx6srp",
+            "shortcut": "north_america"
+        }
+    ]
+}
