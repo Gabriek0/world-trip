@@ -1,17 +1,26 @@
+import { useRouter } from "next/router";
+
 import { Box, Flex, HStack, Text, Tooltip } from "@chakra-ui/react";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
+
 import Header from "../../components/Header";
-
+import { GetStaticPaths, GetStaticProps } from "next";
+import { api } from "../../services/api";
 import Countries from "../../components/Countries";
+import { Continents } from "../../models/Continents";
 
-function ContinentPage() {
+interface ContinentPageProps {
+  continent: Continents[];
+}
+
+function ContinentPage({ continent }: ContinentPageProps) {
   return (
     <Flex flexDirection="column">
       <Header />
 
       <Flex
         h={["40", "sm", "sm", "sm", "sm", "lg"]}
-        bg="url(/europe-london.png)"
+        bg={`url(${continent[0].image})`}
         bgPosition="center"
         bgRepeat="no-repeat"
         bgSize="cover"
@@ -25,7 +34,7 @@ function ContinentPage() {
           alignItems={["center", "flex-end"]}
         >
           <Text color="gray.100" fontSize={["4xl", "5xl"]} fontWeight="600">
-            Europa
+            {continent[0].name}
           </Text>
         </Flex>
       </Flex>
@@ -46,11 +55,7 @@ function ContinentPage() {
             pb={["8", null, "8", "0"]}
           >
             <Text lineHeight="8" textAlign="justify" fontSize={["18", "20"]}>
-              A Europa é, por convenção, um dos seis continentes do mundo.
-              Compreendendo a península ocidental da Eurásia, a Europa
-              geralmente divide-se da Ásia a leste pela divisória de águas dos
-              montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a
-              sudeste
+              {continent[0].information}
             </Text>
           </Box>
           <HStack spacing="8" px={["0", "0", "8"]}>
@@ -61,7 +66,7 @@ function ContinentPage() {
                 color="yellow"
                 textAlign="center"
               >
-                50
+                {continent[0].countryNumber}
               </Text>
               <Text
                 fontWeight="600"
@@ -78,7 +83,7 @@ function ContinentPage() {
                 color="yellow"
                 textAlign="center"
               >
-                60
+                {continent[0].languageNumber}
               </Text>
               <Text
                 fontWeight="600"
@@ -118,9 +123,37 @@ function ContinentPage() {
         </Flex>
       </Flex>
 
-      <Countries />
+      <Countries countries={continent[0].countries!} />
     </Flex>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const response = await api.get(`/continents`);
+
+  const continents: Continents[] = await response.data;
+
+  const paths = continents.map((path: Continents) => ({
+    params: {
+      shortcut: path.shortcut,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: true, // ?
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const response = await api.get(`/continents?shortcut=${params?.shortcut}`);
+  const continent = await response.data;
+
+  return {
+    props: {
+      continent,
+    },
+  };
+};
 
 export default ContinentPage;

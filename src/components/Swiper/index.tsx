@@ -19,14 +19,7 @@ import { useEffect, useState } from "react";
 // Axios
 import { api } from "../../services/api";
 import { Url } from "url";
-
-interface Continents {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  shortcut: string;
-}
+import { Continents } from "../../models/Continents";
 
 function Swiper() {
   const [continents, setContinents] = useState<Continents[]>();

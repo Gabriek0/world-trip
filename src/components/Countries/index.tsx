@@ -1,7 +1,12 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
+import { Countries } from "../../models/Continents";
 import CountryCard from "./CountryCard";
 
-function Countries() {
+interface CountriesProps {
+  countries: Countries[];
+}
+
+function Countries({ countries }: CountriesProps) {
   return (
     <Flex
       w="100%"
@@ -27,12 +32,16 @@ function Countries() {
           align="center"
           flexWrap="wrap"
         >
-          <CountryCard />
-          <CountryCard />
-          <CountryCard />
-          <CountryCard />
-          <CountryCard />
-          <CountryCard />
+          {countries &&
+            countries.map((country) => (
+              <CountryCard
+                key={country.id}
+                capital={country.capital}
+                country={country.country}
+                flag={country.flag}
+                capitalImage={country.capitalImage}
+              />
+            ))}
         </Flex>
       </Flex>
     </Flex>
